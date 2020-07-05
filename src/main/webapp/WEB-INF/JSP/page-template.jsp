@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 
 <!DOCTYPE html>
 <html>
@@ -22,7 +23,7 @@
 					<h1>Blog name</h1>
 				</div>
 				<div class="large-6 medium-6 columns">
-					<form action="#" method="get">
+					<form action="/search" method="get">
 						<div class="input-group" style="margin-top: 1em;">
 							<input id="search" class="input-group-field" name="query"
 								placeholder="Search query" type="text">
@@ -47,22 +48,24 @@
 				data-dropdown-menu>
 				<li><a href="javascript:void(0);">Categories</a>
 					<ul class="menu" style="display: none;">
-						<li><a href="index.html">Elementum<span>(1)</span></a></li>
-						<li><a href="index.html">Proin<span>(2)</span></a></li>
-						<li><a href="index.html">Eleifend<span>(18)</span></a></li>
-						<li><a href="index.html">Phasellus<span>(24)</span></a></li>
-						<li><a href="index.html">Consectetuer<span>(33)</span></a></li>
-						<li><a href="index.html">Ultricies<span>(2)</span></a></li>
-						<li><a href="index.html">Mollis<span>(1)</span></a></li>
+						<li><a href="/news">Elementum<span>(1)</span></a></li>
+						<li><a href="/news">Proin<span>(2)</span></a></li>
+						<li><a href="/news">Eleifend<span>(18)</span></a></li>
+						<li><a href="/news">Phasellus<span>(24)</span></a></li>
+						<li><a href="/news">Consectetuer<span>(33)</span></a></li>
+						<li><a href="/news">Ultricies<span>(2)</span></a></li>
+						<li><a href="/news">Mollis<span>(1)</span></a></li>
 					</ul></li>
 			</ul>
 		</div>
 	</div>
 	<section class="row">
-		<div id="mainContent" class="large-10 columns" style="min-height: 600px;">
-			<jsp:include page="${currentPage }"/>
+		<div id="mainContent" class="large-10 columns"
+			style="min-height: 600px;">
+			<jsp:include page="${currentPage }" />
 		</div>
-		<div class="columns large-2 show-for-large right" data-sticky-container>
+		<div class="columns large-2 show-for-large right"
+			data-sticky-container>
 			<div class="sticky categories show-for-large" data-sticky
 				data-anchor="mainContent">
 				<table>
@@ -71,25 +74,25 @@
 							<th style="width: 270px;">Categories</th>
 						</tr>
 						<tr>
-							<td><a href="index.html">Elementum<span>(1)</span></a></td>
+							<td><a href="/news">Elementum<span>(1)</span></a></td>
 						</tr>
 						<tr>
-							<td><a href="index.html">Proin<span>(2)</span></a></td>
+							<td><a href="/news">Proin<span>(2)</span></a></td>
 						</tr>
 						<tr>
-							<td><a href="index.html">Eleifend<span>(18)</span></a></td>
+							<td><a href="/news">Eleifend<span>(18)</span></a></td>
 						</tr>
 						<tr>
-							<td><a href="index.html">Phasellus<span>(24)</span></a></td>
+							<td><a href="/news">Phasellus<span>(24)</span></a></td>
 						</tr>
 						<tr>
-							<td><a href="index.html">Consectetuer<span>(33)</span></a></td>
+							<td><a href="/news">Consectetuer<span>(33)</span></a></td>
 						</tr>
 						<tr>
-							<td><a href="index.html">Ultricies<span>(2)</span></a></td>
+							<td><a href="/news">Ultricies<span>(2)</span></a></td>
 						</tr>
 						<tr>
-							<td><a href="index.html">Mollis<span>(1)</span></a></td>
+							<td><a href="/news">Mollis<span>(1)</span></a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -103,8 +106,8 @@
 					<i class="fi-shield"></i>PERSONAL BLOG
 				</p>
 				<p class="footer-links">
-					<a href="#">News</a> <a href="#">Search</a> <a href="about.html">About</a>
-					<a href="contact.html">Contact</a>
+					<a href="/news">News</a> <a href="#">Search</a> <a href="/about">About</a>
+					<a href="/contact">Contact</a>
 				</p>
 				<p class="copywrite">Copywrite not copywrite © 2015</p>
 			</div>
