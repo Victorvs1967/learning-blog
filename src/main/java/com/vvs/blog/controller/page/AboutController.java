@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.vvs.blog.controller.AbstractController;
 
-
 @WebServlet("/about")
 public class AboutController extends AbstractController {
 
@@ -19,5 +18,4 @@ public class AboutController extends AbstractController {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		forwardToPage("about.jsp", req, resp);
 	}
-
 }
