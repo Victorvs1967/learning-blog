@@ -4,8 +4,7 @@
 <div class="callout">
 	<h3 class="text-center">Contact form</h3>
 	<hr />
-	<form action="/contact" method="post" data-abide novalidate
-		class="contact-form">
+	<form action="/contact" method="post" data-abide novalidate class="contact-form">
 		<div data-abide-error class="small-12 medium-8 columns small-centered"
 			style="padding: 0 5px; display: none;">
 			<div class="alert callout">

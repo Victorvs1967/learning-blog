@@ -30,8 +30,7 @@
 		</div>
 	</div>
 	<div class="article thumbnail">
-		<a href="/article"><img src="http://placehold.it/1000x400"
-			alt="Donec venenatis vulputate lorem."></a>
+		<a href="/article"><img src="http://placehold.it/1000x400" alt="Donec venenatis vulputate lorem."></a>
 		<div class="data">
 			<h3>
 				<a href="/article">Donec venenatis vulputate lorem.</a>
@@ -49,8 +48,7 @@
 		</div>
 	</div>
 	<div class="article thumbnail">
-		<a href="/article"><img src="http://placehold.it/1000x400"
-			alt="Praesent ac massa at ligula laoreet iaculis."></a>
+		<a href="/article"><img src="http://placehold.it/1000x400" alt="Praesent ac massa at ligula laoreet iaculis."></a>
 		<div class="data">
 			<h3>
 				<a href="/article">Praesent ac massa at ligula laoreet
