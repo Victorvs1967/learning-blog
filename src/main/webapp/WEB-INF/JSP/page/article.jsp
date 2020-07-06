@@ -4,8 +4,7 @@
 	<img src="http://placehold.it/1000x400"
 		alt="Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.">
 	<div class="data">
-		<h3>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id,
-			lorem.</h3>
+		<h3>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</h3>
 		<ul class="vertical large-horizontal menu">
 			<li><i class="fi-folder"></i><a href="/news">Phasellus</a></li>
 			<li><i class="fi-comments"></i>14 comments</li>

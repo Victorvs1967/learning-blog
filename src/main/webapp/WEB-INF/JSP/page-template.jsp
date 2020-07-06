@@ -60,8 +60,7 @@
 		</div>
 	</div>
 	<section class="row">
-		<div id="mainContent" class="large-10 columns"
-			style="min-height: 600px;">
+		<div id="mainContent" class="large-10 columns" style="min-height: 600px;">
 			<jsp:include page="${currentPage }" />
 		</div>
 		<div class="columns large-2 show-for-large right"
@@ -106,7 +105,9 @@
 					<i class="fi-shield"></i>PERSONAL BLOG
 				</p>
 				<p class="footer-links">
-					<a href="/news">News</a> <a href="#">Search</a> <a href="/about">About</a>
+					<a href="/news">News</a>
+					<a href="/news">Search</a>
+					<a href="/about">About</a>
 					<a href="/contact">Contact</a>
 				</p>
 				<p class="copywrite">Copywrite not copywrite © 2015</p>

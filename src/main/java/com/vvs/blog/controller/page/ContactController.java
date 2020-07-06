@@ -13,8 +13,8 @@ import com.vvs.blog.controller.AbstractController;
 @WebServlet("/contact")
 public class ContactController extends AbstractController {
 
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 2237510186857366773L;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		forwardToPage("contact.jsp", req, resp);

@@ -12,7 +12,8 @@ import org.slf4j.LoggerFactory;
 
 public abstract class AbstractController extends HttpServlet {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 3468601774079874667L;
+
 	protected final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
 	public final void forwardToPage(String jspPage, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
