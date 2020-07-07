@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.vvs.blog.service.impl.ServiceManager;
+
 @WebListener
 public class ApplicationListener implements ServletContextListener {
 	
@@ -14,10 +16,12 @@ public class ApplicationListener implements ServletContextListener {
 	
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
+		ServiceManager.getInstance(sce.getServletContext());
 		LOGGER.info("Application started");
 	}
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) {
+		ServiceManager.getInstance(sce.getServletContext()).destroy();		
 		LOGGER.info("Application destroyed");
 	}
 
