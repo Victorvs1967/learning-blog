@@ -26,9 +26,7 @@
 		</div>
 		<br>
 		<div class="comments">
-			<div id="new-comment-container" class="media-object comment-item new-comment">
-				<jsp:include page="../fragment/new-comment.jsp" />
-			</div>
+			<jsp:include page="../fragment/new-comment.jsp" />
 			<div id="comments-list-container">
 				<jsp:include page="../fragment/comments.jsp" />
 			</div>
