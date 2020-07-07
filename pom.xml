@@ -97,8 +97,7 @@
 							<target>
 								<delete dir="${basedir}/src/main/webapp/WEB-INF/lib" />
 								<copy todir="${basedir}/src/main/webapp/WEB-INF/lib">
-									<fileset
-										dir="${basedir}/target/${project.build.finalName}/WEB-INF/lib" />
+									<fileset dir="${basedir}/target/${project.build.finalName}/WEB-INF/lib" />
 								</copy>
 							</target>
 						</configuration>
