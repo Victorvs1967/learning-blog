@@ -2,7 +2,7 @@
 
 	<div class="media-object comment-item">
 		<div class="media-object-section">
-			<img src="http://placehold.it/80x80" alt="Christopher" class="avatar">
+			<img src="/static/img/no_avatar.svg" alt="Christopher" class="avatar">
 		</div>
 		<div class="media-object-section">
 			<h5 class="name">Christopher</h5>
@@ -15,7 +15,7 @@
 	</div>
 	<div class="media-object comment-item">
 		<div class="media-object-section">
-			<img src="http://placehold.it/80x80" alt="Alfred" class="avatar">
+			<img src="/static/img/no_avatar.svg" alt="Alfred" class="avatar">
 		</div>
 		<div class="media-object-section">
 			<h5 class="name">Alfred</h5>
@@ -27,7 +27,7 @@
 	</div>
 	<div class="media-object comment-item">
 		<div class="media-object-section">
-			<img src="http://placehold.it/80x80" alt="Donnell" class="avatar">
+			<img src="/static/img/no_avatar.svg" alt="Donnell" class="avatar">
 		</div>
 		<div class="media-object-section">
 			<h5 class="name">Donnell</h5>
@@ -39,7 +39,7 @@
 	</div>
 	<div class="media-object comment-item">
 		<div class="media-object-section">
-			<img src="http://placehold.it/80x80" alt="Sammy" class="avatar">
+			<img src="/static/img/no_avatar.svg" alt="Sammy" class="avatar">
 		</div>
 		<div class="media-object-section">
 			<h5 class="name">Sammy</h5>
@@ -51,7 +51,7 @@
 	</div>
 	<div class="media-object comment-item">
 		<div class="media-object-section">
-			<img src="http://placehold.it/80x80" alt="Douglas" class="avatar">
+			<img src="/static/img/no_avatar.svg" alt="Douglas" class="avatar">
 		</div>
 		<div class="media-object-section">
 			<h5 class="name">Douglas</h5>
@@ -63,7 +63,7 @@
 	</div>
 	<div class="media-object comment-item">
 		<div class="media-object-section">
-			<img src="http://placehold.it/80x80" alt="Domingo" class="avatar">
+			<img src="/static/img/no_avatar.svg" alt="Domingo" class="avatar">
 		</div>
 		<div class="media-object-section">
 			<h5 class="name">Domingo</h5>
@@ -76,7 +76,7 @@
 	</div>
 	<div class="media-object comment-item">
 		<div class="media-object-section">
-			<img src="http://placehold.it/80x80" alt="Solomon" class="avatar">
+			<img src="/static/img/no_avatar.svg" alt="Solomon" class="avatar">
 		</div>
 		<div class="media-object-section">
 			<h5 class="name">Solomon</h5>
@@ -89,7 +89,7 @@
 	</div>
 	<div class="media-object comment-item">
 		<div class="media-object-section">
-			<img src="http://placehold.it/80x80" alt="Junior" class="avatar">
+			<img src="/static/img/no_avatar.svg" alt="Junior" class="avatar">
 		</div>
 		<div class="media-object-section">
 			<h5 class="name">Junior</h5>
@@ -102,7 +102,7 @@
 	</div>
 	<div class="media-object comment-item">
 		<div class="media-object-section">
-			<img src="http://placehold.it/80x80" alt="Tyler" class="avatar">
+			<img src="/static/img/no_avatar.svg" alt="Tyler" class="avatar">
 		</div>
 		<div class="media-object-section">
 			<h5 class="name">Tyler</h5>
@@ -115,7 +115,7 @@
 	</div>
 	<div class="media-object comment-item">
 		<div class="media-object-section">
-			<img src="http://placehold.it/80x80" alt="Edmond" class="avatar">
+			<img src="/static/img/no_avatar.svg" alt="Edmond" class="avatar">
 		</div>
 		<div class="media-object-section">
 			<h5 class="name">Edmond</h5>
