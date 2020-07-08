@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.vvs.blog.model.AbstractModel;
 
-public class AbstractEntity<PK> extends AbstractModel implements Serializable {
+public abstract class AbstractEntity<PK> extends AbstractModel implements Serializable {
 
 	private static final long serialVersionUID = 6402987437339933082L;
 	
