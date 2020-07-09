@@ -8,8 +8,10 @@ import javax.sql.DataSource;
 
 import com.vvs.blog.service.BusinessService;
 import com.vvs.blog.dao.SQLDAO;
+import com.vvs.blog.entity.Article;
 import com.vvs.blog.entity.Category;
 import com.vvs.blog.exception.ApplicationException;
+import com.vvs.blog.model.Items;
 
 
 class BusinessServiceImpl implements BusinessService {
@@ -26,13 +28,44 @@ class BusinessServiceImpl implements BusinessService {
 	
 	@Override
 	public Map<Long, Category> mapCategories() {
-		
 		try (Connection c = dataSource.getConnection()) {
 			return sql.mapCategories(c);
 		} catch (SQLException e) {
 			throw new ApplicationException("Can't execute db command: " + e.getMessage(), e);
 		}
-		
+	}
+	
+	@Override
+	public Items<Article> listArticles(int offset, int limit) {
+		try (Connection c = dataSource.getConnection()) {
+			Items<Article> items = new Items<>();
+			items.setItems(sql.listArticles(c, offset, limit));
+			items.setCount(sql.countArticles(c));
+			return items;
+		} catch (SQLException e) {
+			throw new ApplicationException("Can't execute db command: " + e.getMessage(), e);
+		}
+	}
+	
+	@Override
+	public Items<Article> listArticlesByCategory(String categoryUrl, int offset, int limit) {
+		try (Connection c = dataSource.getConnection()) {
+			Items<Article> items = new Items<>();
+			items.setItems(sql.listArticlesByCategory(c, categoryUrl, offset, limit));
+			items.setCount(sql.countArticlesByCategory(c, categoryUrl));
+			return items;
+		} catch (SQLException e) {
+			throw new ApplicationException("Can't execute db command: " + e.getMessage(), e);
+		}
+	}
+	
+	@Override
+	public Category findCategoryByUrl(String categoryUrl) {
+		try (Connection c = dataSource.getConnection()) {
+			return sql.findCategoryByUrl(c, categoryUrl);
+		} catch (SQLException e) {
+			throw new ApplicationException("Can't execute db command: " + e.getMessage(), e);
+		}
 	}
 
 }
