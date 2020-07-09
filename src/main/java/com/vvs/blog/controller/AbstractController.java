@@ -25,6 +25,17 @@ public abstract class AbstractController extends HttpServlet {
 		return businessService;
 	}
 	
+	public final int getOffset(HttpServletRequest req, int limit) {
+
+		String val = req.getParameter("page");
+		if (val != null) {
+			int page = Integer.parseInt(val);
+			return (page - 1) * limit;
+		} else {
+			return 0;
+		}
+	}
+	
 	@Override
 	public void init() throws ServletException {
 		businessService = ServiceManager.getInstance(getServletContext()).getBusinessService();
