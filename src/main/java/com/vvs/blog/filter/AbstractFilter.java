@@ -1,7 +1,6 @@
 package com.vvs.blog.filter;
 
 import java.io.IOException;
-import java.rmi.ServerException;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
