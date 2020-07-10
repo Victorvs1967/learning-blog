@@ -11,6 +11,7 @@ import com.vvs.blog.dao.SQLDAO;
 import com.vvs.blog.entity.Article;
 import com.vvs.blog.entity.Category;
 import com.vvs.blog.exception.ApplicationException;
+import com.vvs.blog.exception.RedirectToValidUrlException;
 import com.vvs.blog.model.Items;
 
 
@@ -77,8 +78,28 @@ class BusinessServiceImpl implements BusinessService {
 			return items;
 		} catch (SQLException e) {
 			throw new ApplicationException("Can't execute db command: " + e.getMessage(), e);
+		}			
+	}
+
+	@Override
+	public Article viewArticle(long idArticle, String requestUrl) throws RedirectToValidUrlException {
+		
+		try (Connection c = dataSource.getConnection()) {
+			Article article = sql.findArticleById(c, idArticle);
+			if (article == null) {
+				return null;
+			}
+			if (!article.getArticleLink().equals(requestUrl)) {
+				throw new RedirectToValidUrlException(article.getArticleLink());
+			} else {
+				article.setViews(article.getViews() + 1);
+				sql.updateArticleViews(c, article);
+				c.commit();
+				return article;
+			}
+		} catch (SQLException e) {
+			throw new ApplicationException("Can't execute db command: " + e.getMessage(), e);
 		}
-			
 	}
 
 }

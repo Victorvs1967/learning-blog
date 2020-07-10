@@ -1,28 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <div class="article thumbnail">
-	<img src="http://placehold.it/1000x400" alt="Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.">
-	<div class="data">
-		<h3>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</h3>
-		<ul class="vertical large-horizontal menu">
-			<li><i class="fi-folder"></i><a href="/news">Phasellus</a></li>
-			<li><i class="fi-comments"></i>14 comments</li>
-			<li><i class="fi-clock"></i>7 Sep 2015, 7:47</li>
-			<li><i class="fi-eye"></i>Hits: 7&nbsp;168</li>
-		</ul>
-		<hr>
-		<div class="content">
-			<p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</p>
-			<p>Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Ut tincidunt tincidunt erat. Praesent nec nisl a purus blandit
-				viverra quis gravida magna mi a libero. Morbi ac felis.</p>
-			<p>Morbi ac felis. Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui.</p>
-			<p></p>
-			<p>Proin sapien ipsum, porta a, auctor quis, euismod ut, mi.</p>
+	<c:set var="category" value="${CATEGORY_MAP[article.idCategory] }" />
+	<div class="article thumbnail">
+		<a href="${article.articleLink }"><img src="${article.logo }" alt="${article.title }" /></a>
+		<div class="data">
+			<h3>
+				<a href="${article.articleLink }">${article.title }</a>
+			</h3>
+			<ul class="vertical large-horizontal menu">
+				<li><i class="fi-folder"></i><a href="/news${category.url}">${category.name }</a></li>
+				<li><i class="fi-comments"></i>
+				<fmt:formatNumber value="${article.comments }" /> comments</li>
+				<li><i class="fi-clock"></i>
+				<fmt:formatDate value="${article.created }" dateStyle="FULL" timeStyle="SHORT" type="both" /></li>
+				<li><i class="fi-eye"></i>Hits: <fmt:formatNumber value="${article.views }" /></li>
+			</ul>
+			<hr />
+			<div class="desc">${article.content }</div>
 		</div>
+	</div>
 		<div class="row columns social">
-			<img src="http://placehold.it/32x32?text=f" alt="social" /> <img src="http://placehold.it/32x32?text=t" alt="social" /> <img
-				src="http://placehold.it/32x32?text=g" alt="social" /> <img src="http://placehold.it/32x32?text=f" alt="social" /> <img
-				src="http://placehold.it/32x32?text=t" alt="social" /> <img src="http://placehold.it/32x32?text=g" alt="social" />
+			<img src="http://placehold.it/32x32?text=f" alt="social" />
+			<img src="http://placehold.it/32x32?text=t" alt="social" />
+			<img src="http://placehold.it/32x32?text=g" alt="social" />
+			<img src="http://placehold.it/32x32?text=f" alt="social" />
+			<img src="http://placehold.it/32x32?text=t" alt="social" />
+			<img src="http://placehold.it/32x32?text=g" alt="social" />
 		</div>
 		<br>
 		<div class="comments">
