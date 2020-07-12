@@ -41,6 +41,7 @@
 	<script src="/static/js/jquery.js"></script>
 	<script src="/static/js/what-input.js"></script>
 	<script src="/static/js/foundation.js"></script>
+	<script src="/static/js/messages.jsp"></script>
 	<script src="/static/js/app.js"></script>
 </body>
 </html>

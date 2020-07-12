@@ -19,19 +19,22 @@
 		<hr />
 		<div class="desc">${article.content }</div>
 		<div class="row columns social">
-			<img src="http://placehold.it/32x32?text=f" alt="social" /> <img src="http://placehold.it/32x32?text=t" alt="social" /> <img
-				src="http://placehold.it/32x32?text=g" alt="social" /> <img src="http://placehold.it/32x32?text=f" alt="social" /> <img
-				src="http://placehold.it/32x32?text=t" alt="social" /> <img src="http://placehold.it/32x32?text=g" alt="social" />
+			<img src="http://placehold.it/32x32?text=f" alt="social" />
+			<img src="http://placehold.it/32x32?text=t" alt="social" />
+			<img src="http://placehold.it/32x32?text=g" alt="social" />
+			<img src="http://placehold.it/32x32?text=f" alt="social" />
+			<img src="http://placehold.it/32x32?text=t" alt="social" />
+			<img src="http://placehold.it/32x32?text=g" alt="social" />
 		</div>
 		<br>
 		<div class="comments">
 			<jsp:include page="../fragment/new-comment.jsp" />
-			<div id="comments-list-container">
-				<jsp:include page="../fragment/comments.jsp" />
+			<div id="comments-list-container" data-comments-count="${article.comments }" data-id-article="${article.id }">
+				<jsp:include page="../fragment/comments.jsp" />				
 			</div>
 			<div id="comments-load-more-ctrl" class="row column text-center">
-				<a href="#" class="button hollow expanded load-more-btn" ${article.comments > fn:length(comments) ? '' : 'style="display:none"' }>Load
-					More</a>
+				<a href="javascript:moreComments();" class="button hollow expanded load-more-btn" ${article.comments >  fn:length(comments) ? '' : 'style="display:none"' }>Load More</a>
+				<img src="/static/img/loading.gif" alt="Loading..." class="loading-indicator" />
 			</div>
 		</div>
 	</div>
