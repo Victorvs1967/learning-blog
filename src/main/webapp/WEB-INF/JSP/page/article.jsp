@@ -3,6 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
 <div class="article thumbnail">
 	<c:set var="category" value="${CATEGORY_MAP[article.idCategory] }" />
 	<a href="${article.articleLink }"><img src="${article.logo }" alt="${article.title }" /></a>
