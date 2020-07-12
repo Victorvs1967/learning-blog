@@ -1,5 +1,6 @@
 package com.vvs.blog.service.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import java.sql.Connection;
@@ -10,6 +11,7 @@ import com.vvs.blog.service.BusinessService;
 import com.vvs.blog.dao.SQLDAO;
 import com.vvs.blog.entity.Article;
 import com.vvs.blog.entity.Category;
+import com.vvs.blog.entity.Comment;
 import com.vvs.blog.exception.ApplicationException;
 import com.vvs.blog.exception.RedirectToValidUrlException;
 import com.vvs.blog.model.Items;
@@ -97,6 +99,16 @@ class BusinessServiceImpl implements BusinessService {
 				c.commit();
 				return article;
 			}
+		} catch (SQLException e) {
+			throw new ApplicationException("Can't execute db command: " + e.getMessage(), e);
+		}
+	}
+
+	@Override
+	public List<Comment> listComments(long idArticle, int offset, int limit) {
+
+		try (Connection c = dataSource.getConnection()) {
+			return sql.listComments(c, idArticle, offset, limit);
 		} catch (SQLException e) {
 			throw new ApplicationException("Can't execute db command: " + e.getMessage(), e);
 		}
