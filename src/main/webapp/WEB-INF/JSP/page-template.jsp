@@ -9,7 +9,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id" content="${social.googleplus.clientId }.apps.googleusercontent.com">
+<meta name="google-signin-client_id" content="${social_googleplus_clientId }">
 
 <link rel="stylesheet" type="text/css" href="/static/css/foundation.css">
 <link rel="stylesheet" type="text/css" href="/static/css/foundation-icons.css">
