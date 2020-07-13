@@ -7,6 +7,7 @@ import com.vvs.blog.entity.Article;
 import com.vvs.blog.entity.Category;
 import com.vvs.blog.entity.Comment;
 import com.vvs.blog.exception.RedirectToValidUrlException;
+import com.vvs.blog.form.CommentForm;
 import com.vvs.blog.model.Items;
 
 public interface BusinessService {
@@ -32,5 +33,7 @@ public interface BusinessService {
 	Article viewArticle(long idArticle, String requestUrl) throws RedirectToValidUrlException;
 	
 	List<Comment> listComments(long idArticle, int offset, int limit);
+	
+	Comment createComment(CommentForm form);
 	
 }

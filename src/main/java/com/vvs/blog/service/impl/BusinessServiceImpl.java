@@ -5,15 +5,19 @@ import java.util.Map;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+
 import javax.sql.DataSource;
 
 import com.vvs.blog.service.BusinessService;
 import com.vvs.blog.dao.SQLDAO;
+import com.vvs.blog.entity.Account;
 import com.vvs.blog.entity.Article;
 import com.vvs.blog.entity.Category;
 import com.vvs.blog.entity.Comment;
 import com.vvs.blog.exception.ApplicationException;
 import com.vvs.blog.exception.RedirectToValidUrlException;
+import com.vvs.blog.form.CommentForm;
 import com.vvs.blog.model.Items;
 
 
@@ -112,6 +116,20 @@ class BusinessServiceImpl implements BusinessService {
 		} catch (SQLException e) {
 			throw new ApplicationException("Can't execute db command: " + e.getMessage(), e);
 		}
+	}
+
+	@Override
+	public Comment createComment(CommentForm form) {
+		
+		Comment c = new Comment();
+		c.setId(0L);
+		c.setContent("Test content");
+		c.setCreated(new Timestamp(System.currentTimeMillis()));
+		Account a = new Account();
+		a.setName("test_account");
+		c.setAccount(a);
+		return c;
+
 	}
 
 }
