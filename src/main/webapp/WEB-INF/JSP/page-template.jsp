@@ -17,14 +17,14 @@
 </head>
 <body>
 	<header>
-		<jsp:include page="fragment/header.jsp"/>
+		<jsp:include page="fragment/header.jsp" />
 	</header>
 	<div class="row">
 		<nav role="navigation" class="large-12 small-6 medium-8 columns">
-			<jsp:include page="fragment/breadcrumbs.jsp"/>
+			<jsp:include page="fragment/breadcrumbs.jsp" />
 		</nav>
 		<div class="small-6 medium-4 columns">
-			<jsp:include page="fragment/categories-dropdown.jsp"/>
+			<jsp:include page="fragment/categories-dropdown.jsp" />
 		</div>
 	</div>
 	<section class="row">
@@ -33,12 +33,12 @@
 		</div>
 		<div class="columns large-2 show-for-large right" data-sticky-container>
 			<div class="sticky categories show-for-large" data-sticky data-anchor="mainContent">
-			<jsp:include page="fragment/categories-table.jsp"/>
+				<jsp:include page="fragment/categories-table.jsp" />
 			</div>
 		</div>
 	</section>
 	<footer class="footer">
-		<jsp:include page="fragment/footer.jsp"/>
+		<jsp:include page="fragment/footer.jsp" />
 	</footer>
 	<script src="/static/js/jquery.js"></script>
 	<script src="/static/js/what-input.js"></script>

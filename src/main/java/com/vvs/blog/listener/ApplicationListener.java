@@ -31,5 +31,4 @@ public class ApplicationListener implements ServletContextListener {
 		ServiceManager.getInstance(sce.getServletContext()).destroy();		
 		LOGGER.info("Application destroyed");
 	}
-
 }
