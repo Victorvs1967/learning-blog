@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import com.vvs.blog.service.AvatarService;
 import com.vvs.blog.service.BusinessService;
+import com.vvs.blog.service.I18nService;
 import com.vvs.blog.service.SocialService;
 import com.vvs.blog.util.AppUtil;
 
@@ -46,6 +47,7 @@ public class ServiceManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ServiceManager.class);
 
 	final Properties applicationProperties = new Properties();
+	final I18nService i18nService;
 	final BusinessService businessService;
 	final BasicDataSource dataSource; 
 	final SocialService socialService;
@@ -58,6 +60,7 @@ public class ServiceManager {
 		dataSource = createBasicDataSource();
 		socialService = new GooglePlusSocialService(this);
 		avatarService = new FileStorageAvatarService(this);
+		i18nService = new I18nServiceImpl();
 		businessService = new BusinessServiceImpl(this);
 		LOGGER.info("ServiceManager instance created");
 	}

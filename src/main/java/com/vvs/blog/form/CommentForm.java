@@ -1,6 +1,6 @@
 package com.vvs.blog.form;
 
-public class CommentForm {
+public class CommentForm extends AbstactForm {
 
 	private Long idArticle;
 	private String content;
