@@ -36,7 +36,7 @@ public class ServiceManager {
 		return businessService;
 	}
 	
-	public String getApplicationProperties(String property) {
+	public String getApplicationPropertyString(String property) {
 		return applicationProperties.getProperty(property);
 	}
 	
@@ -46,8 +46,10 @@ public class ServiceManager {
 	final Properties applicationProperties = new Properties();
 	final BusinessService businessService;
 	final BasicDataSource dataSource; 
+	final ServletContext applicationContext;
 	
 	private ServiceManager(ServletContext context) {
+		this.applicationContext = context;
 		AppUtil.loadProperties(applicationProperties, "application.properties");
 		dataSource = createBasicDataSource();
 		businessService = new BusinessServiceImpl(this);
@@ -58,12 +60,12 @@ public class ServiceManager {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDefaultAutoCommit(false);
 		ds.setRollbackOnReturn(true);
-		ds.setDriverClassName(getApplicationProperties("db.driver"));
-		ds.setUrl(getApplicationProperties("db.url"));
-		ds.setUsername(getApplicationProperties("db.username"));
-		ds.setPassword(getApplicationProperties("db.password"));
-		ds.setInitialSize(Integer.parseInt(getApplicationProperties("db.pool.initSize")));
-		ds.setMaxTotal(Integer.parseInt(getApplicationProperties("db.pool.maxSize")));
+		ds.setDriverClassName(getApplicationPropertyString("db.driver"));
+		ds.setUrl(getApplicationPropertyString("db.url"));
+		ds.setUsername(getApplicationPropertyString("db.username"));
+		ds.setPassword(getApplicationPropertyString("db.password"));
+		ds.setInitialSize(Integer.parseInt(getApplicationPropertyString("db.pool.initSize")));
+		ds.setMaxTotal(Integer.parseInt(getApplicationPropertyString("db.pool.maxSize")));
 		
 		return ds;
 	}
