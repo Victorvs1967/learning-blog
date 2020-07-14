@@ -32,8 +32,6 @@ public class AsyncEmailNotificationService implements NotificationService {
 
 	@Override
 	public void sendNotification(String title, String content) {
-		System.out.println(serviceManager.getApplicationProperty("email.smtp.username"));
-		System.out.println(serviceManager.getApplicationProperty("email.smtp.password"));
 		executorService.submit(new EmailItem(title, content, tryCount));
 	}
 
