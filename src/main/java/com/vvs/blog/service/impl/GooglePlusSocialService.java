@@ -21,7 +21,7 @@ class GooglePlusSocialService implements SocialService {
 	private final List<String> issuers;
 	
 	GooglePlusSocialService(ServiceManager serviceManager) {
-		this.googlePlusClientId = serviceManager.getApplicationPropertyString("social.googleplus.clientId");
+		this.googlePlusClientId = serviceManager.getApplicationProperty("social.googleplus.clientId");
 		this.issuers = Arrays.asList(new String[]{"https://accounts.google.com", "accounts.google.com"});
 	}
 	

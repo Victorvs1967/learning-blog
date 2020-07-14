@@ -22,7 +22,7 @@ public class ApplicationListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		ServiceManager serviceManager =  ServiceManager.getInstance(sce.getServletContext());
 		Map<Long, Category> map = serviceManager.getBusinessService().mapCategories();
-		sce.getServletContext().setAttribute("social_googleplus_clientId", serviceManager.getApplicationPropertyString("social.googleplus.clientId"));
+		sce.getServletContext().setAttribute("social_googleplus_clientId", serviceManager.getApplicationProperty("social.googleplus.clientId"));
 		sce.getServletContext().setAttribute(Constants.CATEGORY_MAP, map);
 		LOGGER.info("Application started");
 	}

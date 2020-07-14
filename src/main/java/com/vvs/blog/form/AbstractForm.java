@@ -6,7 +6,7 @@ import com.vvs.blog.exception.ValidateException;
 import com.vvs.blog.model.AbstractModel;
 import com.vvs.blog.service.I18nService;
 
-public abstract class AbstactForm extends AbstractModel {
+public abstract class AbstractForm extends AbstractModel {
 	
 	protected Locale locale;
 	

@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import com.vvs.blog.service.AvatarService;
 import com.vvs.blog.service.BusinessService;
 import com.vvs.blog.service.I18nService;
+import com.vvs.blog.service.NotificationService;
 import com.vvs.blog.service.SocialService;
 import com.vvs.blog.util.AppUtil;
 
@@ -39,8 +40,14 @@ public class ServiceManager {
 		return businessService;
 	}
 	
-	public String getApplicationPropertyString(String property) {
-		return applicationProperties.getProperty(property);
+	public String getApplicationProperty(String property) {
+		String value = applicationProperties.getProperty(property);
+		if (value.startsWith("${sysEnv.")) {
+			value = value.replace("${sysEnv.", "").replace("}", "");
+			return System.getProperty(value, value);
+		} else {
+			return value;
+		}
 	}
 	
 	private static final String SERVICE_MANAGER = "SERVICE_MANAGER";
@@ -53,6 +60,7 @@ public class ServiceManager {
 	final SocialService socialService;
 	final AvatarService avatarService;
 	final ServletContext applicationContext;
+	final NotificationService notificationService;
 	
 	private ServiceManager(ServletContext context) {
 		this.applicationContext = context;
@@ -61,6 +69,7 @@ public class ServiceManager {
 		socialService = new GooglePlusSocialService(this);
 		avatarService = new FileStorageAvatarService(this);
 		i18nService = new I18nServiceImpl();
+		notificationService = new AsyncEmailNotificationService(this);
 		businessService = new BusinessServiceImpl(this);
 		LOGGER.info("ServiceManager instance created");
 	}
@@ -69,12 +78,12 @@ public class ServiceManager {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDefaultAutoCommit(false);
 		ds.setRollbackOnReturn(true);
-		ds.setDriverClassName(getApplicationPropertyString("db.driver"));
-		ds.setUrl(getApplicationPropertyString("db.url"));
-		ds.setUsername(getApplicationPropertyString("db.username"));
-		ds.setPassword(getApplicationPropertyString("db.password"));
-		ds.setInitialSize(Integer.parseInt(getApplicationPropertyString("db.pool.initSize")));
-		ds.setMaxTotal(Integer.parseInt(getApplicationPropertyString("db.pool.maxSize")));
+		ds.setDriverClassName(getApplicationProperty("db.driver"));
+		ds.setUrl(getApplicationProperty("db.url"));
+		ds.setUsername(getApplicationProperty("db.username"));
+		ds.setPassword(getApplicationProperty("db.password"));
+		ds.setInitialSize(Integer.parseInt(getApplicationProperty("db.pool.initSize")));
+		ds.setMaxTotal(Integer.parseInt(getApplicationProperty("db.pool.maxSize")));
 		
 		return ds;
 	}

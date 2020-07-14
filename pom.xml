@@ -78,6 +78,11 @@
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.9.4</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>1.5</version>
+		</dependency>
 
 	</dependencies>
 
@@ -101,7 +106,7 @@
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>3.0.0</version>
 				<executions>
-					<!--  clean	 -->
+					<!-- clean -->
 					<execution>
 						<id>clean-lib</id>
 						<phase>clean</phase>
@@ -114,7 +119,7 @@
 							<goal>run</goal>
 						</goals>
 					</execution>
-					<!--  build	 -->
+					<!-- build -->
 					<execution>
 						<id>copy-lib</id>
 						<phase>install</phase>
@@ -134,7 +139,7 @@
 				</executions>
 			</plugin>
 
- 			<plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>

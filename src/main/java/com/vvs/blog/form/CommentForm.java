@@ -5,7 +5,7 @@ import org.apache.commons.lang.StringUtils;
 import com.vvs.blog.exception.ValidateException;
 import com.vvs.blog.service.I18nService;
 
-public class CommentForm extends AbstactForm {
+public class CommentForm extends AbstractForm {
 
 	private Long idArticle;
 	private String content;
