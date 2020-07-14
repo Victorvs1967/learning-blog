@@ -9,6 +9,7 @@ import com.vvs.blog.service.I18nService;
 public abstract class AbstactForm extends AbstractModel {
 	
 	protected Locale locale;
+	
 	public void setLocale(Locale locale) {
 		this.locale = locale;
 	}
@@ -16,6 +17,6 @@ public abstract class AbstactForm extends AbstractModel {
 		return locale;
 	}
 	public void validate(I18nService i18nService) throws ValidateException {
-
+		
 	}
 }
