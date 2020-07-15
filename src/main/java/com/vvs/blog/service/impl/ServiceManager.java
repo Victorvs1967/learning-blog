@@ -75,11 +75,11 @@ public class ServiceManager {
 		avatarService = new FileStorageAvatarService(this);
 		i18nService = new I18nServiceImpl();
 // Demo
-		notificationService = new LogNotificationService();
-		businessService = new LogBusinessServiceImpl(this);
+//		notificationService = new LogNotificationService();
+//		businessService = new LogBusinessServiceImpl(this);
 // Work
-//		notificationService = new AsyncEmailNotificationService(this);
-//		businessService = new BusinessServiceImpl(this);
+		notificationService = new AsyncEmailNotificationService(this);
+		businessService = new BusinessServiceImpl(this);
 		LOGGER.info("ServiceManager instance created");
 	}
 	
