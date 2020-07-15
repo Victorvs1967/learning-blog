@@ -22,8 +22,7 @@ public interface BusinessService {
 
 	/**
 	 * @return null if entity not found
-	 */
-	
+	 */	
 	Category findCategoryByUrl(String categoryUrl);
 
 	Items<Article> listArticlesBySearchQuery(String searchQuery, int offset, int limit);
@@ -31,7 +30,6 @@ public interface BusinessService {
 	/**
 	 * @return null if entity not found by idArticle
 	 */
-
 	Article viewArticle(long idArticle, String requestUrl) throws RedirectToValidUrlException;
 	
 	List<Comment> listComments(long idArticle, int offset, int limit);
