@@ -74,8 +74,12 @@ public class ServiceManager {
 		socialService = new GooglePlusSocialService(this);
 		avatarService = new FileStorageAvatarService(this);
 		i18nService = new I18nServiceImpl();
-		notificationService = new AsyncEmailNotificationService(this);
-		businessService = new BusinessServiceImpl(this);
+// Demo
+		notificationService = new LogNotificationService();
+		businessService = new LogBusinessServiceImpl(this);
+// Work
+//		notificationService = new AsyncEmailNotificationService(this);
+//		businessService = new BusinessServiceImpl(this);
 		LOGGER.info("ServiceManager instance created");
 	}
 	
