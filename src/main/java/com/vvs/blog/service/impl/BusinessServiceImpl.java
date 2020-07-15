@@ -115,8 +115,7 @@ class BusinessServiceImpl implements BusinessService {
 			Article article = sql.findArticleById(c, idArticle);
 			if (article == null) {
 				return null;
-			}
-			if (!article.getArticleLink().equals(requestUrl)) {
+			} else if (!article.getArticleLink().equals(requestUrl)) {
 				throw new RedirectToValidUrlException(article.getArticleLink());
 			} else {
 				article.setViews(article.getViews() + 1);

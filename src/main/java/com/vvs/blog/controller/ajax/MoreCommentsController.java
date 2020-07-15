@@ -19,6 +19,7 @@ public class MoreCommentsController extends AbstractController {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		int offset = getOffset(req);
 		long idArticle = Long.parseLong(req.getParameter("idArticle"));
 		List<Comment> comments = getBusinessService().listComments(idArticle, offset, Constants.LIMIT_COMMENTS_PER_PAGE);
@@ -27,7 +28,9 @@ public class MoreCommentsController extends AbstractController {
 	}
 
 	private int getOffset(HttpServletRequest req) {
+		
 		String val = req.getParameter("offset");
+		
 		if (val != null) {
 			return Integer.parseInt(val);
 		} else {

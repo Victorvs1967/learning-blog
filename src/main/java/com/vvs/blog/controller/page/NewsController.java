@@ -38,13 +38,16 @@ public class NewsController extends AbstractController {
 	}
 
 	private Items<Article> listArticles(String requestUrl, int offset, HttpServletRequest req) {
+		
 		Items<Article> items;
+		
 		if (requestUrl.endsWith("/news") || requestUrl.endsWith("/news/")) {
 			items = getBusinessService().listArticles(offset, Constants.LIMIT_ARTICLES_PER_PAGE);
 			req.setAttribute("isNewsPage", Boolean.TRUE);
 		} else {
 			String categoryUrl = requestUrl.replace("/news", "");
 			Category category = getBusinessService().findCategoryByUrl(categoryUrl);
+			
 			if (category == null) {
 				return null;
 			}

@@ -63,8 +63,7 @@ public abstract class AbstractController extends HttpServlet {
 			BeanUtils.populate(form, req.getParameterMap());
 			return form;
 		} catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-			throw new ApplicationException("Can't create form "+formClass+" for request: "+e.getMessage(), e);
+			throw new ApplicationException("Can't create form " + formClass + " for request: " + e.getMessage(), e);
 		}
 	}
-
 }

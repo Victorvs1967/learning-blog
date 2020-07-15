@@ -17,29 +17,34 @@ import com.vvs.blog.form.ContactForm;
 public class ContactController extends AbstractController {
 
 	private static final long serialVersionUID = 2237510186857366773L;
-	private static final String CONTACT_REQUEST_SUCESS = "CONTACT_REQUEST_SUCESS"; 
-
+	private static final String DISPLAY_INFO_MESSAGE = "DISPLAY_INFO_MESSAGE";
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Boolean isSuccess = (Boolean) req.getSession().getAttribute(CONTACT_REQUEST_SUCESS);
-		if(isSuccess == null) {
-			isSuccess = Boolean.FALSE;
-		} else {
-			req.getSession().removeAttribute(CONTACT_REQUEST_SUCESS);
-		}
-		req.setAttribute("success", isSuccess);
+		Boolean displayInfoMessage = shouldInfoMessageBeDisplayed(req);
+		req.setAttribute("displayInfoMessage", displayInfoMessage);
 		forwardToPage("contact.jsp", req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			ContactForm form = createForm(req, ContactForm.class);
 			getBusinessService().createContactRequest(form);
-			req.getSession().setAttribute(CONTACT_REQUEST_SUCESS, Boolean.TRUE);
+			req.getSession().setAttribute(DISPLAY_INFO_MESSAGE, Boolean.TRUE);
 			resp.sendRedirect("/contact");
 		} catch (ValidateException e) {
-			throw new ApplicationException("Validation should be done on client side: "+e.getMessage(), e);
+			throw new ApplicationException("Validation should be done on client side: " + e.getMessage(), e);
 		}
+	}
+	
+	private boolean shouldInfoMessageBeDisplayed(HttpServletRequest req) {
+		Boolean displayInfoMessage = (Boolean) req.getSession().getAttribute(DISPLAY_INFO_MESSAGE);
+		if (displayInfoMessage == null) {
+			displayInfoMessage = Boolean.FALSE;
+		} else {
+			req.getSession().removeAttribute(DISPLAY_INFO_MESSAGE);
+		}
+		return displayInfoMessage;
 	}
 }

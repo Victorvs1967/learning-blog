@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 import com.vvs.blog.model.AbstractModel;
 import com.vvs.blog.service.NotificationService;
 
-public class AsyncEmailNotificationService implements NotificationService {
+class AsyncEmailNotificationService implements NotificationService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AsyncEmailNotificationService.class);
 	private final ServiceManager serviceManager;
