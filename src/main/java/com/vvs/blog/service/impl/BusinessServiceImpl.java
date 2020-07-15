@@ -26,6 +26,7 @@ import com.vvs.blog.exception.ApplicationException;
 import com.vvs.blog.exception.RedirectToValidUrlException;
 import com.vvs.blog.exception.ValidateException;
 import com.vvs.blog.form.CommentForm;
+import com.vvs.blog.form.ContactForm;
 import com.vvs.blog.model.Items;
 import com.vvs.blog.model.SocialAccount;
 
@@ -180,6 +181,15 @@ class BusinessServiceImpl implements BusinessService {
 			
 			throw new ApplicationException("Can't create new comment: " + e.getMessage(), e);
 		}
+	}
+	
+	@Override
+	public void createContactRequest(ContactForm form) throws ValidateException {
+		
+		form.validate(i18nService);
+		String title = i18nService.getMessage("notification.contact.title", form.getLocale());
+		String content = i18nService.getMessage("notification.contact.content", form.getLocale(), form.getName(), form.getEmail(), form.getText());
+		notificationService.sendNotification(title, content);
 	}
 
 }

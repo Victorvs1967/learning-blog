@@ -17,15 +17,6 @@ public class MoreCommentsController extends AbstractController {
 
 	private static final long serialVersionUID = 1016452888394060929L;
 	
-	private int getOffset(HttpServletRequest req) {
-		String val = req.getParameter("offset");
-		if (val != null) {
-			return Integer.parseInt(val);
-		} else {
-			return 0;
-		}
-	}
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int offset = getOffset(req);
@@ -33,5 +24,14 @@ public class MoreCommentsController extends AbstractController {
 		List<Comment> comments = getBusinessService().listComments(idArticle, offset, Constants.LIMIT_COMMENTS_PER_PAGE);
 		req.setAttribute("comments", comments);
 		forwardToFragment("comments.jsp", req, resp);
+	}
+
+	private int getOffset(HttpServletRequest req) {
+		String val = req.getParameter("offset");
+		if (val != null) {
+			return Integer.parseInt(val);
+		} else {
+			return 0;
+		}
 	}
 }

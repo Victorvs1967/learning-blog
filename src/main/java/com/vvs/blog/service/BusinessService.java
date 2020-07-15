@@ -9,6 +9,7 @@ import com.vvs.blog.entity.Comment;
 import com.vvs.blog.exception.RedirectToValidUrlException;
 import com.vvs.blog.exception.ValidateException;
 import com.vvs.blog.form.CommentForm;
+import com.vvs.blog.form.ContactForm;
 import com.vvs.blog.model.Items;
 
 public interface BusinessService {
@@ -37,4 +38,5 @@ public interface BusinessService {
 	
 	Comment createComment(CommentForm form) throws ValidateException;
 	
+	void createContactRequest(ContactForm form) throws ValidateException;
 }
